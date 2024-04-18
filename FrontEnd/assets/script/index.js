@@ -38,9 +38,33 @@ document.addEventListener('DOMContentLoaded', function() {
         
 });
 
+function filterByCategory(categoryId) {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        const itemCategoryId = item.dataset.categoryId;
+        if (itemCategoryId === categoryId || categoryId === '0') {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none'; 
+        }
+    });
+}
 
-    // Récupération des catégories depuis le back-end
-    fetch('http://localhost:5678/api/categories')
+
+function filterByCategory(categoryId) {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        const itemCategoryId = item.dataset.categoryId;
+        if (itemCategoryId === categoryId || categoryId === '0') {
+            item.style.display = ''; 
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Fonction pour filtrer les projets en fonction de la catégorie
+fetch('http://localhost:5678/api/categories')
     .then(response => {
         if (!response.ok) {
             throw new Error('Erreur de réseau.');
@@ -76,15 +100,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
         const allButton = document.createElement('button');
-            allButton.textContent = 'Tous';
-            applyButtonStyles(allButton); 
-            allButton.style.padding = '5px 25px'; 
-            filterButtonsContainer.appendChild(allButton);
+        allButton.textContent = 'Tous';
+        allButton.id = '0';
+        applyButtonStyles(allButton); 
+        allButton.style.padding = '5px 25px'; 
+        filterButtonsContainer.appendChild(allButton);
             
         // Génération des boutons pour chaque catégorie
-        categories.forEach(category => {
+        categories.forEach((category, index) => {
             const button = document.createElement('button');
             button.textContent = category.name;
+            button.id = (index + 1).toString();
             applyButtonStyles(button); 
             filterButtonsContainer.appendChild(button);
         });
@@ -94,9 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
         filterButtonsContainer.style.marginBottom = '20px';
         
     })
-
     .catch(error => {
         console.error('Erreur lors de la récupération des catégories:', error);
     });
-
-    
