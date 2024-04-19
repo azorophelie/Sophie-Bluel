@@ -190,17 +190,21 @@ footer nav ul {
 /*PAGE DE CONNEXION*/
 
 .login-container {
-    width: 300px;
-	margin: auto;   
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+	
 }
 
 .login-container h2 {
-    text-align: center;
+    
     margin-bottom: 20px;
 }
 
 .input-group {
     margin-bottom: 15px;
+	width: 300px;
 }
 
 .input-group label {
@@ -212,13 +216,11 @@ footer nav ul {
     width: 100%;
     padding: 10px;
     border: 2px solid white;
-	border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    display: block;
+    
 }
 
-button {
+.login-container button {
 	display: block;
     width: 179px;
     padding: 10px;
@@ -228,10 +230,7 @@ button {
     border: none;
     border-radius: 60px;
     cursor: pointer;
-    margin-top: 30px; 
-	margin-bottom: 30px;
-	margin-left: auto;
-    margin-right: auto; 
+	margin: auto;
 }
 
 
