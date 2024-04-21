@@ -10,27 +10,29 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="assets/script/login.js"></script>
+	</head>
 	
 <body>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li>login</li>
+			<li><a href="index.html">projets</a></li>
+			<li><a href="index.html#contact">contact</a></li>
+			<li><a href="login.html">login</a></li>
+			
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
 </header>
 <div class="login-container">
     <h2>Log In</h2>
-    <form action="#" method="POST">
+    <form id="login-form" method="POST">
         <div class="input-group">
-            <label for="username">E-mail</label>
-            <input type="text" id="username" name="username" required>
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email" required>
         </div>
-        <div class="input-group">
+        <div class="input-group password">
             <label for="password">Mot de passe</label>
             <input type="password" id="password" name="password" required>
         </div>
@@ -39,6 +41,8 @@
     <div class="forgot-password">
         <a href="#">Mot de passe oublié</a>
     </div>
+	<div id="error-message" class="error-message" style="display: none;"></div>
+	
 </div>
 <footer>
 	<nav>
@@ -48,6 +52,6 @@
 	</nav>
 </footer>
 
-</head>
+
 </body>
 </html>

@@ -61,6 +61,9 @@ fetch('http://localhost:5678/api/works')
         button.style.marginRight = '10px';
         button.style.fontSize = '16px';
         
+    
+        
+        
         
         
         button.addEventListener('mouseover', function() {
@@ -109,6 +112,7 @@ fetch('http://localhost:5678/api/categories')
         allButton.classList.add("active-filter-btn");
         applyButtonStyles(allButton);
         allButton.style.padding = '5px 25px';
+        allButton.style.width = '100px';
         allButton.style.backgroundColor = '#1D6154'; 
         allButton.style.color = 'white';
         allButton.addEventListener('click', () => handleClick('0', allButton));
@@ -128,10 +132,41 @@ fetch('http://localhost:5678/api/categories')
         
         filterButtonsContainer.style.display = 'flex';
         filterButtonsContainer.style.justifyContent = 'center';
-        filterButtonsContainer.style.marginBottom = '20px';
+        filterButtonsContainer.style.marginBottom = '60px';
+        filterButtonsContainer.style.marginTop = '50px';
+
 
         
     })
     .catch(error => {
         console.error('Error fetching categories data:', error);
+    });
+
+    /* Affciher la commande Logout quand la personne est connectée*/
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const loginLogoutLink = document.getElementById("login-logout-button");
+    
+        
+        const token = localStorage.getItem("token");
+        if (token) {
+            
+            loginLogoutLink.textContent = "logout";
+        } else {
+            
+            loginLogoutLink.textContent = "login";
+        }
+    
+
+        loginLogoutLink.addEventListener("click", function () {
+            if (token) {
+                
+                localStorage.removeItem("token");
+                
+                window.location.href = "login.html";
+            } else {
+                
+                window.location.href = "index.html";
+            }
+        });
     });
