@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!email || !validateEmail(email)) {
             errorMessage.innerText = "Veuillez entrer une adresse e-mail valide.";
             errorMessage.style.display = "block";
+            errorMessage.style.color = "red";
             return; 
         }
 
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!password || password.length < 5 || !password.match(/^[a-zA-Z0-9]+$/g)) {
             errorMessage.innerText = "Le mot de passe doit avoir au moins 5 caractères et ne contenir que des lettres (minuscules ou majuscules) et des chiffres.";
             errorMessage.style.display = "block";
+            errorMessage.style.color = "red";
             return; 
         }
 
@@ -46,11 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 errorMessage.innerText = "Erreur dans l’identifiant ou le mot de passe.";
                 errorMessage.style.display = "block";
+                errorMessage.style.color = "red";
             }
         } catch (error) {
             
             errorMessage.innerText = "Une erreur est survenue lors de la connexion.";
             errorMessage.style.display = "block";
+            errorMessage.style.color = "red";
             console.error(error);
         }
     });

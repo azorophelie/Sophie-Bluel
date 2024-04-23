@@ -50,97 +50,62 @@ fetch('http://localhost:5678/api/works')
         console.error('Error fetching works data:', error);
     });
 
-    function applyButtonStyles(button) {
-        button.classList.add('filter-button');
-        button.style.borderRadius = '20px'; 
-        button.style.borderWidth = '1px'; 
-        button.style.borderColor = '#1D6154'; 
-        button.style.padding = '5px 15px'; 
-        button.style.backgroundColor = 'white'; 
-        button.style.color = '#1D6154'; 
-        button.style.marginRight = '10px';
-        button.style.fontSize = '16px';
-        
-    
-        
-        
-        
-        
-        button.addEventListener('mouseover', function() {
-            button.style.backgroundColor = '#1D6154'; 
-            button.style.color = 'white'; 
-        });
-
-        button.addEventListener('mouseout', function() {
-            button.style.backgroundColor = 'white'; 
-            button.style.color = '#1D6154'; 
-        });
-    }
     
 // Récupérer les données des catégories depuis l'API
-fetch('http://localhost:5678/api/categories')
-    .then(response => {
+async function fetchCategories() {
+    try {
+        const response = await fetch('http://localhost:5678/api/categories');
         if (!response.ok) {
             throw new Error('Erreur de réseau.');
         }
-        return response.json();
-    })
-    .then(categories => {
-        const filterButtonsContainer = document.querySelector('#filter-buttons');
+        const categories = await response.json();
+        return categories;
+    } catch (error) {
+        console.error('Error fetching categories data:', error);
+        return [];
+    }
+}
 
-        
-        // Fonction pour gérer le clic sur les boutons de filtre
-    
-        function handleClick(categoryId, filterButtons) {
-            const allFilterButtons = document.querySelectorAll(".filter-button");
-            filterByCategory(categoryId);
-            allFilterButtons.forEach(currentFilterButton => {
-                if (currentFilterButton === filterButtons) {
-                    currentFilterButton.classList.add("active-button");
-                } else {
-                    currentFilterButton.classList.remove("active-button");
-                }
-            });
-        }
-       
+let allButton; // Déclaration de la variable en dehors de la fonction
 
-        /*Créer le bouton 'Tous'*/
+async function displayCategories() {
+    const categories = await fetchCategories();
+    const filterButtonsContainer = document.querySelector('#filter-buttons');
 
-        const allButton = document.createElement('button');
-        allButton.textContent = 'Tous';
-        allButton.id = '0';
-        allButton.classList.add("active-filter-btn");
-        applyButtonStyles(allButton);
-        allButton.style.padding = '5px 25px';
-        allButton.style.width = '100px';
-        allButton.style.backgroundColor = '#1D6154'; 
-        allButton.style.color = 'white';
-        allButton.addEventListener('click', () => handleClick('0', allButton));
-        filterButtonsContainer.appendChild(allButton);
-            
-        // Générer les boutons pour chaque catégorie
-
-        categories.forEach(category => {
-            const button = document.createElement('button');
-            button.textContent = category.name;
-            button.id = category.id.toString();
-            button.classList.add('filter-button');
-            applyButtonStyles(button);
-            button.addEventListener('click', () => handleClick(category.id.toString(), button));
-            filterButtonsContainer.appendChild(button);
+    function handleClick(categoryId, filterButton) {
+        const allFilterButtons = document.querySelectorAll(".filter-button");
+        filterByCategory(categoryId);
+        allFilterButtons.forEach(button => {
+            if (button === filterButton) {
+                button.classList.add("active-button");
+            } else {
+                button.classList.remove("active-button");
+            }
         });
         
-        filterButtonsContainer.style.display = 'flex';
-        filterButtonsContainer.style.justifyContent = 'center';
-        filterButtonsContainer.style.marginBottom = '60px';
-        filterButtonsContainer.style.marginTop = '50px';
+    }
 
+   
+    const allButton = document.createElement('button');
+    allButton.textContent = 'Tous';
+    allButton.id = '0';
+    allButton.classList.add("active-button");
+    allButton.classList.add('filter-button');
+    allButton.addEventListener('click', () => handleClick('0', allButton));
+    filterButtonsContainer.appendChild(allButton);
 
-        
-    })
-    .catch(error => {
-        console.error('Error fetching categories data:', error);
+    categories.forEach(category => {
+        const button = document.createElement('button');
+        button.textContent = category.name;
+        button.id = category.id.toString();
+        button.classList.add('filter-button');
+        button.addEventListener('click', () => handleClick(category.id.toString(), button));
+        filterButtonsContainer.appendChild(button);
     });
+
+}
+
+displayCategories();
 
     /* Affciher la commande Logout quand la personne est connectée*/
 
@@ -170,3 +135,5 @@ fetch('http://localhost:5678/api/categories')
             }
         });
     });
+
+    
