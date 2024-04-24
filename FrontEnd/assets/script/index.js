@@ -136,4 +136,24 @@ displayCategories();
         });
     });
 
+    document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.getElementById("login-form");
+        const errorMessage = document.getElementById("error-message");
+        const editModeSection = document.getElementById("admin");
+        const modifierDiv = document.querySelector("#portfolio .edit");
+        const filterButtonsDiv = document.getElementById("filter-buttons");
+    
+        /* Vérifie si l'utilisateur est connecté en vérifiant la présence du token dans le localStorage  */
+        const isLoggedIn = !!localStorage.getItem("token");
+    
+        /* Affiche ou masque le mode édition en fonction de la connexion de l'utilisateur */
+        if (isLoggedIn) {
+            editModeSection.style.display = "block"; 
+            modifierDiv.style.display = "block"; 
+            filterButtonsDiv.style.display = "none"; 
+        } else {
+            editModeSection.style.display = "none"; 
+            modifierDiv.style.display = "none"; 
+        }
+    });
     

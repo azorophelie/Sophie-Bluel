@@ -116,7 +116,9 @@ li:hover {
 #introduction {
 	display: flex;
 	align-items: center;
+	margin-bottom: 130px;
 }
+
 #introduction figure {
 	flex: 1
 }
@@ -127,7 +129,7 @@ li:hover {
 }
 
 #introduction article {
-	flex: 1
+	flex: 1;
 }
 #introduction h2 {
 	margin-bottom: 1em;
@@ -138,8 +140,11 @@ li:hover {
 }
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
+	
 }
+
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -292,7 +297,7 @@ footer nav ul {
 	color: #1D6154;
 	font-size: 16px;
 	text-align: center;
-	margin-bottom: 40px;	
+	margin-bottom: 50px;	
 	margin-left: 7px;
 	margin-right: 7px;
 }
@@ -308,5 +313,59 @@ footer nav ul {
 	color: #FFFFFF;
 }
 	
+.edition {
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	height: 60px;
 	
+}	
 	
+#admin {
+	width: 100%;
+	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: auto;
+	height: 60px;
+}
+
+
+
+i.mode {
+	font-size: 16px;
+	color: white;
+	margin-right: 12px;
+}
+
+#admin p {
+	color: white;
+}
+
+.modifier {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.edit {
+	
+	margin-left: 35px;
+	margin-bottom: 4em;
+	color: black;
+}
+
+.edit i {
+	margin-right: 6px;
+}
+
+.edit a {
+	text-decoration: none;
+	color: black;
+}
+
+
+
+
