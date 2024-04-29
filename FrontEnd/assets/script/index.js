@@ -66,7 +66,7 @@ async function fetchCategories() {
     }
 }
 
-let allButton; // Déclaration de la variable en dehors de la fonction
+let allButton; 
 
 async function displayCategories() {
     const categories = await fetchCategories();
@@ -156,4 +156,5 @@ displayCategories();
             modifierDiv.style.display = "none"; 
         }
     });
+    
     

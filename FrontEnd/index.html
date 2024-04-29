@@ -12,23 +12,24 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
-	
+	</head>
 <body>
-	<section id="admin">
+	<div id="admin">
 		<div class="edition">
 			<i class="fa-regular fa-pen-to-square mode"></i>
 			<p class="mode-edition">Mode édition</p>
 		</div>
 
-	</section>
+	</div>
+
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
-			<a href="#contact"><li>contact</li></a>
-			<a id="login-logout-button" href="login.html"><li>login</li></a>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			<li><a href="#projets">projets</a></li>
+        <li><a href="#contact">contact</a></li>
+        <li><a id="login-logout-button" href="login.html">login</a></li>
+        <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
 </header>
@@ -49,9 +50,24 @@
 		<h2>Mes Projets</h2>
 		<div class="edit">
 		<i class="fa-regular fa-pen-to-square square"></i>
-		<a href="">modifier</a>
+		<a class="edit-link" href="">modifier</a>
 		</div>
 		</div>
+		<dialog id="modal" class="modal">
+    <div class="modal-content">
+      
+      <div class="modal-view gallery-view">
+        <h3>Galerie Photo</h3>
+		<div class="gallery-modal"></div> 
+        <button class="close-button"><i class="fa-solid fa-xmark"></i></button>
+		<div class="separate-line"></div>
+      </div>
+	  
+      <div class="modal-view add-photo-view"> 
+        <button>Ajouter une photo</button>
+      </div>
+    </div>
+  </dialog>
 		<div id="filter-buttons"></div>
 		<div class="gallery">
 		</div>
@@ -78,7 +94,8 @@
 		</ul>
 	</nav>
 </footer>
-</head>
+
 <script src="./assets/script/index.js"></script>
+<script src="./assets/script/modal.js"></script>
 </body>
 </html>
