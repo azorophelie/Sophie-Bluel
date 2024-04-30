@@ -1,10 +1,15 @@
 var modal = document.getElementById('modal');
-    var btn = document.querySelector('.edit-link');
+    var btn = document.querySelector('.edit');
+    var modeEditionBar = document.querySelector('.edition');
+
     btn.addEventListener('click', function(event) {
       event.preventDefault(); 
       modal.showModal();
     });
     
+    modeEditionBar.addEventListener('click', function() {
+      modal.showModal();
+    });
     /*Fermer la modale*/
     var closeBtn = document.querySelector('.close-button');
     closeBtn.addEventListener('click', function() {
@@ -68,7 +73,56 @@ btn.addEventListener('click', async function(event) {
     });
   }
   
+  
+// Supprimer un projet dans la modale
+
   function deleteWork(event) {
     const workId = event.target.dataset.workId;
     
+    
+    if (confirm("Voulez-vous vraiment supprimer ce projet ?")) {
+      
+      fetch(`http://localhost:5678/api/works/${workId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erreur lors de la suppression du projet.');
+        }
+        
+        if (response.status !== 204) {
+          return response.json();
+        }
+      })
+      .then(() => {
+        
+        fetchWorksData();
+      })
+      .catch(error => {
+        console.error('Error deleting work:', error);
+      });
+    }
   }
+  
+  async function fetchWorksData() {
+    try {
+      const response = await fetch('http://localhost:5678/api/works');
+      if (!response.ok) {
+        throw new Error('Erreur de réseau.');
+      }
+      const data = await response.json();
+      displayGallery(data);
+    } catch (error) {
+      console.error('Error fetching works data:', error);
+    }
+  }
+  
+  // Appeler cette fonction pour afficher la galerie initiale
+  fetchWorksData();
+  
+  
+
+  

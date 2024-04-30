@@ -336,6 +336,7 @@ footer nav ul {
     justify-content: center;
 	align-items: center;
 	height: 60px;
+	cursor: pointer;
 }	
 	
 
@@ -366,6 +367,7 @@ i.mode {
 
 .edit i {
 	margin-right: 6px;
+	cursor: pointer;
 }
 
 .edit a {
