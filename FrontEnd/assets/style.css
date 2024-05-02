@@ -377,7 +377,7 @@ i.mode {
 
 /****** FENETRE MODAL ***********/
 
-#modal {
+#modal, .modal-bis{
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -463,9 +463,8 @@ i.mode {
     width: 70%; 
     margin-left: auto;
 	margin-right: auto;
-	margin-top: 70px;
+	margin-top: 60px;
 	margin-bottom: 40px;
-  
 }
 
 .gallery-modal::after {
@@ -479,10 +478,129 @@ i.mode {
 	text-align: center;
 }
 
-.add-photo-view button {
+.add-photo-view button, .valide {
 	border: 1px #1D6154 solid;
 	background-color: #1D6154;
 	color: white;
 	border-radius: 60px;
 	padding: 7px 50px;
+	cursor: pointer;
+}
+
+
+  
+  
+  
+ 
+
+  
+
+  #icon-modale {
+	font-size: 76px;
+	color: #cbd6dc;
+	
+  }
+
+  .modal-view .add-photo-hidden {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  .form-modale {
+	background-color: #E8F1F6;
+	margin: 15% auto;
+	width: 420px;
+	height: 169px;
+	padding-top: 30px;
+	text-align: center;
+	position: relative;
+  }
+
+  #modale-image {
+	border: 1px solid #cbd6dc;
+	border-radius: 50px;
+	height: 36px;
+	width: 173px;
+	line-height: 36px;
+	margin: auto;
+	background-color: #cbd6dc;
+  }
+  #image-preview {
+	height: 169px;
+	width: 200px;
+	
+  }
+
+  .form-modale p {
+	margin-top: 7px;
+  }
+
+  #image-input {
+	display: none;
+  }
+
+  #modale-image {
+	
+	display: block; 
+	margin-top: 10px;
+	cursor: pointer; 
+  }
+
+  #photoTitle, 
+  #photoCategory {
+	width: 420px;
+    height: 51px;
+    box-shadow: 0px 0px 15px rgb(233, 233, 228);
+    border: none;
+    margin-top: 10px;
+	background-color: white;
+  }
+
+.title-category label,
+.title-category input,
+.title-category select {
+	display: block;
+	width: 420px; 
+	margin: 10px auto;;
+	
+}
+
+.title-category {
+	margin: auto;
+}
+
+
+  
+
+  .add-photo-hidden {
+	margin-top: 30px; 
+  }
+
+  .form-modale {
+	margin-top: 5%;
+  }
+ 
+  .title-category {
+	margin-top: -65px;
+  }
+
+  #photoTitle {
+	margin-bottom: 20px;
+  }
+  
+  .ligne {
+	margin-bottom : 10px;
+  }
+  .valide {
+    background-color: #1D6154; 
+    color: white; 
+}
+
+.valide:disabled {
+    background-color: grey; 
+    color: #aaa; 
+}
+
+#image-preview {
+ display: none;
 }

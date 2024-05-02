@@ -67,3 +67,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+
+
+const sectionToScroll = window.location.hash.substring(1);
+if (sectionToScroll) {
+    setTimeout(function () {
+        const targetSection = document.getElementById(sectionToScroll);
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop,
+            });
+        }
+    }, 100);
+}
