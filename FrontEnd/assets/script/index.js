@@ -1,5 +1,4 @@
-/* Fonction pour initialiser la galerie */
-
+/////////////// FONCTION POUR INITIALISER LA GALERIE //////////////
 function initGallery(data) {
     const galleryElement = document.querySelector('.gallery');
   
@@ -20,8 +19,7 @@ function initGallery(data) {
     } 
 }
 
-/* Fonction pour filtrer les projets par catégorie */
-
+/////////////// FONCTION POUR FILTRER LES PROJETS PAR CATÉGORIE //////////////
 function filterByCategory(categoryId) {
     const galleryItems = document.querySelectorAll('.figure');
     galleryItems.forEach(item => {
@@ -34,8 +32,7 @@ function filterByCategory(categoryId) {
     });
 }
 
-/* Récupérer les données des travaux depuis l'API */
-
+// Récupérer les données des travaux depuis l'API //
 fetch('http://localhost:5678/api/works')
     .then(response => {
         if (!response.ok) {
@@ -51,7 +48,7 @@ fetch('http://localhost:5678/api/works')
     });
 
     
-// Récupérer les données des catégories depuis l'API
+// Récupérer les données des catégories depuis l'API //
 async function fetchCategories() {
     try {
         const response = await fetch('http://localhost:5678/api/categories');
@@ -107,7 +104,7 @@ async function displayCategories() {
 
 displayCategories();
 
-    /* Affciher la commande Logout quand la personne est connectée*/
+    // Affciher la commande Logout quand la personne est connectée //
 
     document.addEventListener("DOMContentLoaded", function () {
         const loginLogoutLink = document.getElementById("login-logout-button");
@@ -115,22 +112,18 @@ displayCategories();
         
         const token = localStorage.getItem("token");
         if (token) {
-            
             loginLogoutLink.textContent = "logout";
         } else {
             
             loginLogoutLink.textContent = "login";
         }
     
-
         loginLogoutLink.addEventListener("click", function () {
             if (token) {
-                
                 localStorage.removeItem("token");
                 
                 window.location.href = "login.html";
             } else {
-                
                 window.location.href = "index.html";
             }
         });

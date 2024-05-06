@@ -23,41 +23,54 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 /** end reset css**/
-body {
+.body {
 	max-width: 1140px;
+	margin:auto;
+}
+
+body {
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0
 }
+
 section {
 	margin: 50px 0
 }
@@ -75,7 +88,6 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
 
 h2{
@@ -86,37 +98,35 @@ h2{
 }
 
 /****** HEADER  ***********/
-
 nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-
 }
+
 nav li  {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
 
-#login-logout-button {
-	font-size: 1.2em;
-	padding: 0 10px;
-	
-}
 nav a {
 	text-decoration: none;
 	color: black;
 }
 
-li:hover {
+li a:hover, li:hover {
 	color: #B1663C;
 }
 
 #login-logout-button:hover {
 	color: #B1663C;
 }
-/****** INTRODUCTION ***********/
 
+.projets-head,
+.log-head {
+	font-weight: bold;
+}
+/****** INTRODUCTION ***********/
 #introduction {
 	display: flex;
 	align-items: center;
@@ -146,7 +156,6 @@ li:hover {
 }
 
 /****** MES PROJETS ET BOUTONS FILTRES ***********/
-
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 2em;
@@ -182,7 +191,6 @@ li:hover {
 }
 
 /****** GALERIE ***********/
-
 .gallery {
 	width: 100%;
 	display: grid;
@@ -196,7 +204,6 @@ li:hover {
 }
 
 /****** FORMULAIRE DE CONTACT ***********/
-
 #contact {
 	width: 50%;
   	margin: auto;
@@ -245,18 +252,14 @@ input[type="submit"]{
 }
 
 /****** FOOTER ***********/
-
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
 
-
 /****** PAGE DE CONNEXION ***********/
-
 .login-container {
-	
 	display: flex;
     align-items: center;
     justify-content: center;
@@ -318,40 +321,44 @@ footer nav ul {
 	color: #3D3D3D;
 }
 
-
-/****** MODE ADMINISTRATEUR ***********/
-	
+/****** MODE ADMINISTRATEUR ***********/	
 #admin {
 	width: 100%;
 	background-color: black;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	margin-top: auto;
 	height: 59px;
 }
 
 .edition {
-	display: flex;
-    justify-content: center;
-	align-items: center;
-	height: 60px;
-	cursor: pointer;
+	width: 100%;
+	background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 59px;
+  gap: 0.5rem;
 }	
-	
 
 i.mode {
 	font-size: 16px;
 	color: white;
 	margin-right: 12px;
+	cursor: pointer;
 }
 
-#admin p {
+.mode:hover, #admin a:hover {
+	color: #B1663C;
+}
+
+#admin a {
 	color: white;
+	cursor: pointer;
 }
 
 /****** lien modifier ***********/
-
 .modifier {
     display: flex;
 	justify-content: center;
@@ -359,7 +366,6 @@ i.mode {
 }
 
 .edit {
-	
 	margin-left: 35px;
 	margin-bottom: 4em;
 	color: black;
@@ -375,8 +381,15 @@ i.mode {
 	color: black;
 }
 
-/****** FENETRE MODAL ***********/
+.edit:hover {
+	color: #B1663C;
+}
 
+.edit a:hover {
+	color: #B1663C;
+}
+
+/****** FENETRE MODAL ***********/
 #modal, .modal-bis{
 	position: fixed;
 	left: 0;
@@ -389,7 +402,6 @@ i.mode {
 }
 
 /****** contenu de la modale ***********/
-
 .modal-content {
   background-color: #ffffff;
   margin-top: 30px;
@@ -402,7 +414,6 @@ i.mode {
 }
 
 /****** croix pour fermer la modale ***********/
-
 .close-button {
 	color: black;
 	position: absolute; 
@@ -414,17 +425,39 @@ i.mode {
 	background: none; 
 	padding: 30px; 
 	cursor: pointer;
-  }
-  
-  .close-button:hover,
-  .close-button:focus {
+}
+
+.close-button:hover,
+.close-button:focus {
 	color: black;
 	text-decoration: none;
 	outline: none; 
-  }
+	transform: scale(1.03);
+    opacity: 0.6;
+}
+
+.back-button {
+	color: black;
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	border: none; 
+	background: none; 
+	cursor: pointer;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 30px; 
+}
+  
+.back-button:hover {
+	color: black;
+	text-decoration: none;
+	outline: none;
+	transform: scale(1.03);
+    opacity: 0.6;
+}
 
 /****** galerie de la modale ***********/
-
 .gallery-modal {
 	display: flex;
 	flex-wrap: wrap;
@@ -442,7 +475,6 @@ i.mode {
 .gallery-item img {
 	width: 80px;
 	height: auto;
-
 }
   
 .fa-trash-can {
@@ -457,6 +489,10 @@ i.mode {
 	border-radius: 3px;
 }
 
+.fa-trash-can:hover {
+	transform: scale(1.03);
+    opacity: 0.6;
+}
 
 .separate-line{
     border-top: 1px solid #B3B3B3; 
@@ -472,13 +508,13 @@ i.mode {
     width: calc((92% - 80px) / 1); 
 }
 
-/****** bouton ajouter photo ***********/
-
+/****** bouton ajouter photo et valide ***********/
 .add-photo-view {
 	text-align: center;
 }
 
-.add-photo-view button, .valide {
+.add-photo-view button, 
+.valide {
 	border: 1px #1D6154 solid;
 	background-color: #1D6154;
 	color: white;
@@ -487,26 +523,26 @@ i.mode {
 	cursor: pointer;
 }
 
+.open-add-photo-modal:hover, 
+.valide:hover,
+.envoyer:hover {
+	background-color: #0e2f28;
+}
 
-  
-  
-  
- 
-
-  
-
-  #icon-modale {
+#icon-modale {
 	font-size: 76px;
 	color: #cbd6dc;
 	
-  }
+}
 
-  .modal-view .add-photo-hidden {
+/****** modale ajouter une photo ***********/
+.modal-view .add-photo-hidden {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-  }
-  .form-modale {
+}
+  
+.form-modale {
 	background-color: #E8F1F6;
 	margin: 15% auto;
 	width: 420px;
@@ -514,9 +550,9 @@ i.mode {
 	padding-top: 30px;
 	text-align: center;
 	position: relative;
-  }
+}
 
-  #modale-image {
+#modale-image {
 	border: 1px solid #cbd6dc;
 	border-radius: 50px;
 	height: 36px;
@@ -524,37 +560,36 @@ i.mode {
 	line-height: 36px;
 	margin: auto;
 	background-color: #cbd6dc;
-  }
-  #image-preview {
+}
+/****** preview de l'image ***********/
+#image-preview {
 	height: 169px;
 	width: 200px;
-	
-  }
+}
 
-  .form-modale p {
+.form-modale p {
 	margin-top: 7px;
-  }
+}
 
-  #image-input {
+#image-input {
 	display: none;
-  }
+}
 
-  #modale-image {
-	
+#modale-image {
 	display: block; 
 	margin-top: 10px;
 	cursor: pointer; 
-  }
-
-  #photoTitle, 
-  #photoCategory {
+}
+/****** titre et catégories ***********/
+#photoTitle, 
+#photoCategory {
 	width: 420px;
     height: 51px;
     box-shadow: 0px 0px 15px rgb(233, 233, 228);
     border: none;
     margin-top: 10px;
 	background-color: white;
-  }
+}
 
 .title-category label,
 .title-category input,
@@ -562,36 +597,33 @@ i.mode {
 	display: block;
 	width: 420px; 
 	margin: 10px auto;;
-	
 }
 
 .title-category {
 	margin: auto;
 }
 
-
-  
-
-  .add-photo-hidden {
+.add-photo-hidden {
 	margin-top: 30px; 
-  }
+}
 
-  .form-modale {
+.form-modale {
 	margin-top: 5%;
-  }
+}
  
-  .title-category {
+.title-category {
 	margin-top: -65px;
-  }
+}
 
-  #photoTitle {
+#photoTitle {
 	margin-bottom: 20px;
-  }
+}
   
-  .ligne {
+.ligne {
 	margin-bottom : 10px;
-  }
-  .valide {
+}
+
+.valide {
     background-color: #1D6154; 
     color: white; 
 }
@@ -603,4 +635,8 @@ i.mode {
 
 #image-preview {
  display: none;
+}
+
+.envoyer {
+	cursor: pointer;
 }
