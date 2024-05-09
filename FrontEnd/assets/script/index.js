@@ -1,3 +1,4 @@
+
 /////////////// FONCTION POUR INITIALISER LA GALERIE //////////////
 function initGallery(data) {
     const galleryElement = document.querySelector('.gallery');
@@ -47,7 +48,6 @@ fetch('http://localhost:5678/api/works')
         console.error('Error fetching works data:', error);
     });
 
-    
 // Récupérer les données des catégories depuis l'API //
 async function fetchCategories() {
     try {
@@ -82,7 +82,6 @@ async function displayCategories() {
         
     }
 
-   
     const allButton = document.createElement('button');
     allButton.textContent = 'Tous';
     allButton.id = '0';
@@ -135,7 +134,6 @@ displayCategories();
         const editModeSection = document.getElementById("admin");
         const modifierDiv = document.querySelector("#portfolio .edit");
         
-    
         /* Vérifie si l'utilisateur est connecté en vérifiant la présence du token dans le localStorage  */
         const isLoggedIn = !!localStorage.getItem("token");
     

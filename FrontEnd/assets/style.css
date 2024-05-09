@@ -122,10 +122,6 @@ li a:hover, li:hover {
 	color: #B1663C;
 }
 
-.projets-head,
-.log-head {
-	font-weight: bold;
-}
 /****** INTRODUCTION ***********/
 #introduction {
 	display: flex;
@@ -393,7 +389,7 @@ i.mode {
 #modal, .modal-bis{
 	position: fixed;
 	left: 0;
-	top: 0;
+	top: 150px;
 	height: 688px;
 	width: 630px;
 	overflow: auto;
@@ -401,10 +397,11 @@ i.mode {
 	border: none;
 }
 
+
 /****** contenu de la modale ***********/
 .modal-content {
   background-color: #ffffff;
-  margin-top: 30px;
+  margin-top: 3px;
 }
 
 .modal-view h3 {
@@ -531,27 +528,32 @@ i.mode {
 
 #icon-modale {
 	font-size: 76px;
-	color: #cbd6dc;
-	
+	color: #cbd6dc;	
 }
 
 /****** modale ajouter une photo ***********/
-.modal-view .add-photo-hidden {
+.add-photo-hidden {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
+
+  #image-input {
+	display: none;
+  }
   
-.form-modale {
+  .blue-background {
 	background-color: #E8F1F6;
-	margin: 15% auto;
+	display: flex;
+	flex-direction: column;
 	width: 420px;
 	height: 169px;
 	padding-top: 30px;
 	text-align: center;
 	position: relative;
+	
 }
-
+ 
 #modale-image {
 	border: 1px solid #cbd6dc;
 	border-radius: 50px;
@@ -559,27 +561,30 @@ i.mode {
 	width: 173px;
 	line-height: 36px;
 	margin: auto;
+	text-align: center;
 	background-color: #cbd6dc;
+	display: block; 
+	margin-top: 10px;
+	cursor: pointer; 
+	margin-bottom: 5px;	
 }
+
 /****** preview de l'image ***********/
-#image-preview {
-	height: 169px;
-	width: 200px;
-}
+.title-category label {
+	text-align: left;
+	display: block;
+  }
 
-.form-modale p {
-	margin-top: 7px;
-}
 
-#image-input {
-	display: none;
-}
 
 #modale-image {
 	display: block; 
 	margin-top: 10px;
 	cursor: pointer; 
 }
+/* Déplacer la hauteur et la largeur ici */
+
+
 /****** titre et catégories ***********/
 #photoTitle, 
 #photoCategory {
@@ -589,6 +594,7 @@ i.mode {
     border: none;
     margin-top: 10px;
 	background-color: white;
+	
 }
 
 .title-category label,
@@ -596,23 +602,17 @@ i.mode {
 .title-category select {
 	display: block;
 	width: 420px; 
-	margin: 10px auto;;
+	margin: 10px auto;
+	text-align: flex-start;
 }
 
 .title-category {
-	margin: auto;
+	margin-top: 40px;
+	align-self: flex-start;
 }
 
 .add-photo-hidden {
 	margin-top: 30px; 
-}
-
-.form-modale {
-	margin-top: 5%;
-}
- 
-.title-category {
-	margin-top: -65px;
 }
 
 #photoTitle {
@@ -626,6 +626,7 @@ i.mode {
 .valide {
     background-color: #1D6154; 
     color: white; 
+	align-items: center;
 }
 
 .valide:disabled {
