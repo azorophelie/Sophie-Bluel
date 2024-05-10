@@ -201,7 +201,7 @@ li a:hover, li:hover {
 
 /****** FORMULAIRE DE CONTACT ***********/
 #contact {
-	width: 50%;
+	width: 30%;
   	margin: auto;
 }
 
@@ -228,7 +228,7 @@ li a:hover, li:hover {
 }
 
 #contact label {
-	margin: 2em 0 1em 0;
+	margin: 3em 0 1em 0;
 }
 
 #contact textarea {
@@ -397,17 +397,18 @@ i.mode {
 	border: none;
 }
 
-
 /****** contenu de la modale ***********/
 .modal-content {
   background-color: #ffffff;
   margin-top: 3px;
+  text-align: center;
 }
 
 .modal-view h3 {
 	text-align: center;
 	font-size: 26px;
-	margin-bottom: 60px;
+	margin-bottom: 30px;
+	margin-top: 60px;
 }
 
 /****** croix pour fermer la modale ***********/
@@ -463,6 +464,7 @@ i.mode {
 	column-gap: 10px;
 	margin-left: 80px;
 	margin-right: 80px;
+	
 }
   
 .gallery-item {
@@ -510,6 +512,7 @@ i.mode {
 	text-align: center;
 }
 
+
 .add-photo-view button, 
 .valide {
 	border: 1px #1D6154 solid;
@@ -526,16 +529,21 @@ i.mode {
 	background-color: #0e2f28;
 }
 
+.modalContainer {
+	display: none;
+}
 #icon-modale {
 	font-size: 76px;
 	color: #cbd6dc;	
 }
 
 /****** modale ajouter une photo ***********/
-.add-photo-hidden {
+#addPhotoForm {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	
+    
 }
 
   #image-input {
@@ -544,8 +552,7 @@ i.mode {
   
   .blue-background {
 	background-color: #E8F1F6;
-	display: flex;
-	flex-direction: column;
+	margin: 5% auto;
 	width: 420px;
 	height: 169px;
 	padding-top: 30px;
@@ -575,15 +582,12 @@ i.mode {
 	display: block;
   }
 
-
-
 #modale-image {
 	display: block; 
 	margin-top: 10px;
 	cursor: pointer; 
 }
 /* Déplacer la hauteur et la largeur ici */
-
 
 /****** titre et catégories ***********/
 #photoTitle, 
@@ -597,18 +601,9 @@ i.mode {
 	
 }
 
-.title-category label,
-.title-category input,
-.title-category select {
-	display: block;
-	width: 420px; 
-	margin: 10px auto;
-	text-align: flex-start;
-}
-
-.title-category {
-	margin-top: 40px;
-	align-self: flex-start;
+#addPhotoForm label{
+    width: 420px; 
+    text-align: left;
 }
 
 .add-photo-hidden {
@@ -619,14 +614,11 @@ i.mode {
 	margin-bottom: 20px;
 }
   
-.ligne {
-	margin-bottom : 10px;
-}
-
 .valide {
     background-color: #1D6154; 
     color: white; 
 	align-items: center;
+	width:30%;
 }
 
 .valide:disabled {
