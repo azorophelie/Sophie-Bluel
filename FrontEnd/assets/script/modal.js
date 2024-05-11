@@ -587,7 +587,12 @@ closeButtonModal1.addEventListener('click', function() {
       modalContainer.close(); // Ferme la première modal
   }
 });
-
+// Fermer la modal lorsque l'utilisateur clique en dehors de la modal
+window.addEventListener('click', function(event) {
+  if (event.target === modalContainer) {
+    modalContainer.close(); // Ferme la première modal
+  }
+});
 // Bouton ajouter une photo sur la premiére modal
 addPhotoButton.addEventListener("click", function() {
 // Appeler la fonction pour ouvrir la modale d'ajout de photo
@@ -611,7 +616,14 @@ closeButtonModal2.addEventListener('click', function() {
       addPhotoModal.style.display = 'none';
   }
 });
-
+// Fermer la deuxième modal lorsque l'utilisateur clique en dehors de la modal
+window.addEventListener('click', function(event) {
+  if (event.target === addPhotoModal) {
+    addPhotoModal.close();
+    modalContainer.close(); // Ferme la première modal
+    addPhotoModal.style.display = 'none';
+  }
+});
 // Ouvrir la modale principale lors du clic sur modeEditionBar//
 modeEditionBar.addEventListener('click', function() {
   openModal();
