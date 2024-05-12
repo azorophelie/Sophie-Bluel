@@ -187,6 +187,7 @@ document.body.appendChild(modalContainer);
 
 // Fonction pour ouvrir la modale d'ajout de photo
 function openAddPhotoModal() {
+  resetAddPhotoForm();
   addPhotoModal.style.display = 'block';
   addPhotoModal.showModal();
 }
@@ -264,6 +265,13 @@ document.addEventListener("DOMContentLoaded", function() {
   // updateButtonState pour initialiser l'état du bouton au chargement de la page
   updateButtonState();
 });
+function resetAddPhotoForm() {
+  // Réinitialiser le formulaire
+  document.getElementById('addPhotoForm').reset();
+  // Désactiver le bouton Valider
+  document.getElementById('valide').setAttribute("disabled", "disabled");
+  resetFormFields();
+}
 
 ///////////////PRÉVISUALISATION DE L'IMAGE//////////////
 const inputImage = document.getElementById("image-input");
@@ -366,6 +374,24 @@ async function sendFormData(event) {
   // Récupération de l'objet File de l'image 
   const imageFile = imageInput.files[0];
 
+
+     // Vérifier si aucun fichier n'est sélectionné
+     if (!imageFile) {
+      alert("Veuillez sélectionner une image.");
+      return;
+  }
+
+  // Vérifier la taille du fichier (max 4 Mo)
+  if (imageFile.size > 4 * 1024 * 1024) {
+      alert("La taille de l'image ne doit pas dépasser 4 Mo.");
+      return;
+  }
+
+  // Vérifier le type de fichier (JPG ou PNG)
+  if (!['image/jpeg', 'image/png'].includes(imageFile.type)) {
+      alert("Le format de fichier doit être JPG ou PNG.");
+      return;
+  }
   // Récupération du titre et de la catégorie depuis les champs du formulaire
   const title = document.getElementById('photoTitle').value;
   const category = document.getElementById('photoCategory').value;
@@ -460,6 +486,7 @@ function resetFormFields() {
   inputImage.style.display = 'none';
   iconeImage.style.display = 'block';
 }
+
 
 resetFormFields();
 
@@ -602,6 +629,7 @@ openAddPhotoModal();
 backButton.addEventListener('click', function() {
  // Confirmation avant de quitter la modal
  if (confirm("Voulez-vous vraiment quitter sans enregistrer les données ?"))
+  resetAddPhotoForm();
 // Code pour masquer la modal actuelle et afficher la modal précédente
 document.getElementById('add-photo-modal').close();
   document.getElementById('modal').showModal();
@@ -611,6 +639,7 @@ document.getElementById('add-photo-modal').close();
 // Fermer la deuxiéme modal avec la croix //
 closeButtonModal2.addEventListener('click', function() {
   if (confirm("Voulez-vous vraiment quitter sans enregistrer les données ?")) {
+    resetAddPhotoForm();
       addPhotoModal.close();
       modalContainer.close(); // Ferme la première modal
       addPhotoModal.style.display = 'none';

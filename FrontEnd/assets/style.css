@@ -528,10 +528,22 @@ i.mode {
 .envoyer:hover {
 	background-color: #0e2f28;
 }
+.valide {
+    background-color: #1D6154; 
+    color: white; 
+	align-items: center;
+	width:30%;
+}
+
+.valide:disabled {
+    background-color: grey; 
+    color: #aaa; 
+}
 
 .modalContainer {
 	display: none;
 }
+
 #icon-modale {
 	font-size: 76px;
 	color: #cbd6dc;	
@@ -541,16 +553,14 @@ i.mode {
 #addPhotoForm {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	
-    
+	align-items: center;  
 }
 
-  #image-input {
+#image-input {
 	display: none;
-  }
+}
   
-  .blue-background {
+.blue-background {
 	background-color: #E8F1F6;
 	margin: 5% auto;
 	width: 420px;
@@ -580,15 +590,18 @@ i.mode {
 .title-category label {
 	text-align: left;
 	display: block;
-  }
+}
 
 #modale-image {
 	display: block; 
 	margin-top: 10px;
 	cursor: pointer; 
 }
-/* Déplacer la hauteur et la largeur ici */
 
+#image-preview {
+	display: none;
+}
+   
 /****** titre et catégories ***********/
 #photoTitle, 
 #photoCategory {
@@ -597,8 +610,7 @@ i.mode {
     box-shadow: 0px 0px 15px rgb(233, 233, 228);
     border: none;
     margin-top: 10px;
-	background-color: white;
-	
+	background-color: white;	
 }
 
 #addPhotoForm label{
@@ -614,22 +626,6 @@ i.mode {
 	margin-bottom: 20px;
 }
   
-.valide {
-    background-color: #1D6154; 
-    color: white; 
-	align-items: center;
-	width:30%;
-}
-
-.valide:disabled {
-    background-color: grey; 
-    color: #aaa; 
-}
-
-#image-preview {
- display: none;
-}
-
 .envoyer {
 	cursor: pointer;
 }
