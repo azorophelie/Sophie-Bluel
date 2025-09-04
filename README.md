@@ -1,6 +1,6 @@
 # Portfolio-architecte-sophie-bluel
 
-Ce projet est un site web dynamique développé pour une architecte d’intérieur dans le cadre de ma formation Développeur Web chez OpenClassrooms en 2024.
+Ce projet est un site web dynamique développé pour une architecte d’intérieur dans le cadre du projet 3 de ma formation Développeur Web chez OpenClassrooms en 2024.  
 Il a été réalisé avec l’agence ArchiWebos, qui compte 50 collaborateurs, et s’inscrit dans un contexte professionnel collaboratif.
 
 #### L’objectif est de transformer un site statique en un site fonctionnel et interactif, permettant :
@@ -12,7 +12,7 @@ Il a été réalisé avec l’agence ArchiWebos, qui compte 50 collaborateurs, e
 
 ---
 
-## Prérequis
+## Prérequis et lancement du projet
 
 Avant de démarrer, assurez-vous d’avoir installé :
 - Node.js et npm
@@ -21,21 +21,31 @@ Avant de démarrer, assurez-vous d’avoir installé :
 > Optionnel : Postman
  ou Swagger pour tester l’API
 
-### Cloner le dépôt
-git clone ```git@github.com:azorophelie/Sophie-Bluel.git```
+#### Cloner le dépôt
+```sh
+git clone git@github.com:azorophelie/Sophie-Bluel.git
+```
 
 #### Lancer le Backend
-```cd backend```
+```sh
+cd backend
+```
 
 ### Installer le package des dépendances Back End:
-```npm install```
+```sh
+npm install
+```
 
 #### Démarrez le serveur :
-```npm start```
+```sh
+npm start
+```
 
 #### Lancer le Frontend
-```cd frontend```
-- Lancez Live Server depuis votre IDE (VS Code) pour ouvrir le site dans le navigateur.
+```sh
+cd frontend
+```
+- *Lancez Live Server depuis votre IDE (VS Code) pour ouvrir le site dans le navigateur.*
 > Astuce : Si vous souhaitez afficher le code du backend et du frontend en même temps, faites-le dans 2 instances VS Code différentes pour éviter tout conflit.
 
 ## Technologies utilisées
