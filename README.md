@@ -1,6 +1,8 @@
 # Portfolio-architecte-sophie-bluel
 
-Ce projet est un site web dynamique développé pour une architecte d’intérieur dans le cadre du projet 3 de ma formation Développeur Web chez OpenClassrooms en 2024.  
+**Projet 3 de ma formation Développeur Web chez OpenClassrooms 2024**
+
+Ce projet est un site web dynamique. 
 Il a été réalisé avec l’agence ArchiWebos, qui compte 50 collaborateurs, et s’inscrit dans un contexte professionnel collaboratif.
 
 #### L’objectif est de transformer un site statique en un site fonctionnel et interactif, permettant :
